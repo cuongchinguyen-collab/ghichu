@@ -25,6 +25,10 @@ Gas
 Buhin phụ tùng (parts)
 kensaku tìm kiếm
 Ktanka Đơn giá tham khảo
+Sales Unit Price
+
+COM_SYOHIN_MST Product Master Table
+
 change pass for postgres backup db
 
 SELECT pg_size_pretty(SUM(pg_database_size(datname))) AS total_size
