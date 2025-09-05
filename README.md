@@ -39,6 +39,10 @@ SELECT pg_size_pretty(SUM(pg_database_size(datname))) AS total_size
 
 -- get size of indexes
 
+
+gitlab-runner register
+gitlab-runner run --config /etc/gitlab-runner/config.toml --service
+
 SELECT c.relname AS table_name, pg_size_pretty(pg_indexes_size(c.oid)) AS index_size FROM pg_class c JOIN pg_namespace n ON c.relnamespace = n.oid WHERE n.nspname = 'acos2' AND c.relkind = 'r' ORDER BY pg_indexes_size(c.oid) DESC;
 
 Backup: psql "host=192.168.18.22 dbname=postgres user=postgres password=123456 options='-c log_statement=all'" pg_dump -h 160.16.118.79 -U tokyo_gas_dev -d tokyo_gas_dev --no-owner --no-privileges -f tokyo_gas_dev_dump.sql -- pass: Ajd4!0B2
